@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/opcoder/css/style.css' %}">
+<!--    <link rel="icon" type="image/icon" href="{% static 'opcoder/icon/favicon.ico' %}">   -->
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body> 
+    <nav class="nav-bar h-nav-resp" style="background-color:whitesmoke;">
+        <div class="div1">
+            <div class="burger r-burger-resp">
+                <img class="logo Aklogo" src="{% static 'opcoder/img/1.jpg' %}" alt="logo">
+            </div>
+            <ul class="uli1 v-class-resp">
+                <li><a href='/'>Home</a></li>
+                <li><a href=/videos>Video</a></li>
+                <li><a href=/blogs>Blog</a></li>
+                <li><a href=/comment>Comment</a></li>
+                <li><a href=/profile>profile</a></li>
+            </ul>
+            <div class="div2 v-class-resp">
+                <button class="button-1"><a href="/login">login</a></button>
+                <button class="button-1"><a href="/sign_up">SignUp</a></button>
+                <form action="/search" method="get">
+                    <input class="inp-1" type="search" name="slug" placeholder="Search" aria-label="Search">
+                    <button class="button-1" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+<!--    <script src="{% static 'opcoder/js/resp.js' %}"></script>-->
+
+        {% block body %}{% endblock body %}
+
+    <footer>
+        <p class="text-footer">
+            copyright &copy; 2027 - WWW.PahalFoundation.com - All rights reserved.
+        </p>
+    </footer>
+</body>
+</html>         
