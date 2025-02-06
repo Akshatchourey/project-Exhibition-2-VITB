@@ -1,6 +1,23 @@
 from django.urls import path
 from .import views
+from .import views_main_pages as views2
+from .import views_teacher as views3
 
 urlpatterns = [
-    path('', views.index, name='pahal')
+    # views
+    path('', views.index, name='pahal'),
+    path('register/', views.register, name='register'),
+    path('login/', views.login_page, name='login'),
+    path('logout/', views.logout_page, name='logout'),
+
+    # views2
+    path('about/', views2.about, name='about'),
+    path('gallery/', views2.gallery, name='gallery'),
+    path('volunteer/', views2.volunteer, name='volunteer'),
+    path('get_involved/', views2.get_involved, name='get_involved'),
+    path('contact/', views2.contact, name='contact'),
+    path('donate/', views2.donate, name='donate'),
+
+    # views3
+    path('dashboard/',views3.dashboard,name="dashboard"),
 ]

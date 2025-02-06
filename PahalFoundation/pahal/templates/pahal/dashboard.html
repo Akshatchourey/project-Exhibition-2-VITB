@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - Pahal Foundation</title>
+    <link rel="stylesheet" href="{% static 'pahal/css/main-styles.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">Pahal Foundation</div>
+        <ul>
+            <li><a href="/dashboard" class="active">Dashboard</a></li>
+            <li><a href="attendance.html">Attendance</a></li>
+            <li><a href="/logout" id="logout">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="dashboard-container">
+        <h1>Welcome, <span id="teacher-name"></span></h1>
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3>Total Students</h3>
+                <p id="total-students">0</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Today's Attendance</h3>
+                <p id="today-attendance">0%</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Weekly Attendance</h3>
+                <p id="weekly-attendance">0%</p>
+            </div>
+        </div>
+        <div class="quick-actions">
+            <h2>Quick Actions</h2>
+            <a href="attendance.html" class="btn">Take Attendance</a>
+            <button class="btn" id="generate-report">Generate Report</button>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Pahal Foundation</title>
+    <link rel="stylesheet" href="{% static 'pahal/css/donate-styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Pahal Foundation</div>
+            <a href="/" class="back-btn">Back to Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Make a Difference</h1>
+            <p class="subtitle">Your support can change lives. Choose how you'd like to contribute.</p>
+        </section>
+
+        <section class="donation-options">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="money">
+                    <i class="fas fa-rupee-sign"></i> Money
+                </button>
+                <button class="tab-btn" data-tab="goods">
+                    <i class="fas fa-box-open"></i> Goods
+                </button>
+                <button class="tab-btn" data-tab="other">
+                    <i class="fas fa-hand-holding-heart"></i> Other
+                </button>
+            </div>
+
+            <div class="tab-content active" id="money">
+                <h2>Donate Money</h2>
+                <p>Your contribution can make a real difference</p>
+    
+                <form id="money-donation-form">
+                    <div class="form-group">
+                        <label for="donation-amount">Donation Amount (₹)</label>
+                        <input type="number" id="donation-amount" name="amount" min="100" required placeholder="Enter amount (min ₹100)">
+                    </div>
+                    <div class="form-group">
+                        <label for="donor-name">Your Name</label>
+                        <input type="text" id="donor-name" name="name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="donor-email">Your Email</label>
+                        <input type="email" id="donor-email" name="email" required placeholder="Enter your email">
+                    </div>
+                    <button type="submit" class="donate-btn">Donate Now</button>
+                </form>
+
+                <div class="donation-impact">
+                    <h3>Your Impact</h3>
+                    <div class="impact-items">
+                        <div class="impact-item">
+                            <span>₹500</span>
+                            <p>Provides meals for 10 children</p>
+                        </div>
+                        <div class="impact-item">
+                            <span>₹1,000</span>
+                            <p>Supplies educational materials for 5 students</p>
+                        </div>
+                        <div class="impact-item">
+                            <span>₹2,000</span>
+                            <p>Supports a child's education for a month</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="goods">
+                <h2>Donate Goods</h2>
+                <p>Your donations can directly impact lives</p>
+
+                <form id="goods-donation-form">
+                    <div class="form-group">
+                        <label for="goods-category">Select Category</label>
+                        <select id="goods-category" name="category" required>
+                            <option value="">Choose a category</option>
+                            <option value="educational">Educational Materials</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="food">Food and Nutrition</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="goods-description">Description of Goods</label>
+                        <textarea id="goods-description" name="description" required placeholder="Please describe the items you wish to donate"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="donor-name-goods">Your Name</label>
+                        <input type="text" id="donor-name-goods" name="name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="donor-email-goods">Your Email</label>
+                        <input type="email" id="donor-email-goods" name="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="donor-phone">Your Phone</label>
+                        <input type="tel" id="donor-phone" name="phone" required placeholder="Enter your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="pickup-address">Pickup Address</label>
+                        <textarea id="pickup-address" name="address" required placeholder="Enter the address for item pickup"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Schedule Pickup</button>
+                </form>
+            </div>
+
+            <div class="tab-content" id="other">
+                <h2>Other Ways to Help</h2>
+                <div class="other-options">
+                    <div class="other-option">
+                        <i class="fas fa-clock"></i>
+                        <h3>Volunteer Time</h3>
+                        <p>Share your skills and time to make a difference in our community.</p>
+                        <a href="get-involved.html" class="action-btn">Learn More</a>
+                    </div>
+                    <div class="other-option">
+                        <i class="fas fa-book"></i>
+                        <h3>Sponsor Education</h3>
+                        <p>Support a child's educational journey and help shape their future.</p>
+                        <button class="action-btn" onclick="showSponsorshipForm()">Sponsor Now</button>
+                    </div>
+                    <div class="other-option">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Corporate Partnership</h3>
+                        <p>Partner with us for sustainable impact and social responsibility.</p>
+                        <button class="action-btn" onclick="showPartnershipForm()">Contact Us</button>
+                    </div>
+                    <div class="other-option">
+                        <i class="fas fa-bullhorn"></i>
+                        <h3>Spread Awareness</h3>
+                        <p>Help us reach more people by sharing our cause on social media.</p>
+                        <div class="social-share">
+                            <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> +91 XXXXXXXXXX</p>
+                <p><i class="fas fa-envelope"></i> donate@pahalfoundation.org</p>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+<!--    <script src="donate-script.js"></script>-->
+</body>
+</html>

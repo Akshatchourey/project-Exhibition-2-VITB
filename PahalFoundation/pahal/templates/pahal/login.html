@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Login - Pahal Foundation</title>
+    <link rel="stylesheet" href="{% static 'pahal/css/main-styles.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div>
+            {% if messages %}
+            <div>
+                {% for message in messages %}
+                {{message}}
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="form-container">
+            <form method="POST" id="login-form">
+                {% csrf_token %}
+            <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" name="username" required placeholder="Username">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" required placeholder="Password">
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <h1>Login</h1>
+            <div class="links">
+<!--                <a href="forgot-password.html">Forgot Password?</a>-->
+                <a href="/register/">New Teacher? Sign Up</a>
+            </div>
+        </div>
+    </div>
+<!--    <script src="login.js"></script>-->
+</body>
+</html>

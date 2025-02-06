@@ -1,0 +1,135 @@
+{% extends 'pahal/base.html' %}
+{% block title %} volunteers - Pahal Foundation {% endblock title %}
+{% block body %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'pahal/css/volunteer-styles.css' %}">
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">Join Our Cause</h1>
+            <p class="fade-in">Make a difference in your community by volunteering with Pahal Foundation</p>
+        </div>
+    </header>
+    <main>
+        <section class="volunteer-intro">
+            <div class="container">
+                <h2 class="section-title">Why Volunteer with Us?</h2>
+                <div class="reasons-grid">
+                    <div class="reason-card scroll-reveal">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Make an Impact</h3>
+                        <p>Directly contribute to improving lives in your community.</p>
+                    </div>
+                    <div class="reason-card scroll-reveal">
+                        <i class="fas fa-users"></i>
+                        <h3>Build Connections</h3>
+                        <p>Meet like-minded individuals and expand your network.</p>
+                    </div>
+                    <div class="reason-card scroll-reveal">
+                        <i class="fas fa-brain"></i>
+                        <h3>Gain Experience</h3>
+                        <p>Develop new skills and enhance your personal growth.</p>
+                    </div>
+                    <div class="reason-card scroll-reveal">
+                        <i class="fas fa-heart"></i>
+                        <h3>Feel Fulfilled</h3>
+                        <p>Experience the joy of giving back to society.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="volunteer-opportunities">
+            <div class="container">
+                <h2 class="section-title">Volunteer Opportunities</h2>
+                <div class="opportunities-slider">
+                    <div class="opportunity-card">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Teaching">
+                        <h3>Teaching Assistant</h3>
+                        <p>Help children learn and grow in our education programs.</p>
+                        <a href="#volunteer-form" class="btn">Apply Now</a>
+                    </div>
+                    <div class="opportunity-card">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Event Planning">
+                        <h3>Event Coordinator</h3>
+                        <p>Organize and manage community events and fundraisers.</p>
+                        <a href="#volunteer-form" class="btn">Apply Now</a>
+                    </div>
+                    <div class="opportunity-card">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Mentoring">
+                        <h3>Youth Mentor</h3>
+                        <p>Guide and support young individuals in their personal development.</p>
+                        <a href="#volunteer-form" class="btn">Apply Now</a>
+                    </div>
+                    <div class="opportunity-card">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Administrative Support">
+                        <h3>Administrative Support</h3>
+                        <p>Assist with office tasks and organizational management.</p>
+                        <a href="#volunteer-form" class="btn">Apply Now</a>
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="volunteer-form" class="volunteer-signup">
+            <div class="container">
+                <h2 class="section-title">Become a Volunteer</h2>
+                <form id="signup-form" class="scroll-reveal">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Area of Interest</label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Select an option</option>
+                            <option value="teaching">Teaching Assistant</option>
+                            <option value="event">Event Coordinator</option>
+                            <option value="mentoring">Youth Mentor</option>
+                            <option value="admin">Administrative Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Why do you want to volunteer?</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn submit-btn">Submit Application</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="volunteer-testimonials">
+            <div class="container">
+                <h2 class="section-title">Volunteer Testimonials</h2>
+                <div class="testimonials-container">
+                    <div class="testimonial scroll-reveal">
+                        <img src="/placeholder.svg?height=100&width=100" alt="Volunteer 1" class="testimonial-image">
+                        <blockquote>
+                            "Volunteering with Pahal Foundation has been an incredibly rewarding experience. I've seen firsthand the positive impact we're making in children's lives."
+                        </blockquote>
+                        <p class="testimonial-author">- Priya Sharma, Teaching Assistant</p>
+                    </div>
+                    <div class="testimonial scroll-reveal">
+                        <img src="/placeholder.svg?height=100&width=100" alt="Volunteer 2" class="testimonial-image">
+                        <blockquote>
+                            "As an event coordinator, I've had the opportunity to bring the community together and raise awareness for important causes. It's been truly fulfilling."
+                        </blockquote>
+                        <p class="testimonial-author">- Rahul Patel, Event Coordinator</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock body %}

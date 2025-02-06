@@ -1,0 +1,129 @@
+{% extends 'pahal/base.html' %}
+{% block title %} Contact Ous - Pahal Foundation {% endblock title %}
+{% block body %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'pahal/css/contact-styles.css' %}">
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">Get in Touch</h1>
+            <p class="fade-in">We'd love to hear from you!</p>
+        </div>
+    </header>
+    <main>
+        <section class="contact-info">
+            <div class="container">
+                <h2 class="section-title">Contact Information</h2>
+                <div class="info-grid">
+                    <div class="info-card scroll-reveal">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Address</h3>
+                        <p>123 Pahal Street, Charity Lane</p>
+                        <p>New Delhi, 110001, India</p>
+                    </div>
+                    <div class="info-card scroll-reveal">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p>+91 98765 43210</p>
+                        <p>+91 12345 67890</p>
+                    </div>
+                    <div class="info-card scroll-reveal">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>info@pahalfoundation.org</p>
+                        <p>support@pahalfoundation.org</p>
+                    </div>
+                    <div class="info-card scroll-reveal">
+                        <i class="fas fa-clock"></i>
+                        <h3>Working Hours</h3>
+                        <p>Monday - Friday: 9AM - 6PM</p>
+                        <p>Saturday: 10AM - 4PM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form">
+            <div class="container">
+                <h2 class="section-title">Send Us a Message</h2>
+                <form id="contact-form" class="scroll-reveal">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Meet Our Development Team</h2>
+                <div class="team-grid">
+                    <div class="team-member scroll-reveal">
+                        <div class="member-image">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Rahul Sharma">
+                        </div>
+                        <h3>Rahul Sharma</h3>
+                        <p>Lead Developer</p>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member scroll-reveal">
+                        <div class="member-image">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Priya Patel">
+                        </div>
+                        <h3>Priya Patel</h3>
+                        <p>Frontend Developer</p>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member scroll-reveal">
+                        <div class="member-image">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Amit Kumar">
+                        </div>
+                        <h3>Amit Kumar</h3>
+                        <p>Backend Developer</p>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member scroll-reveal">
+                        <div class="member-image">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Neha Gupta">
+                        </div>
+                        <h3>Neha Gupta</h3>
+                        <p>UI/UX Designer</p>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="container">
+                <h2 class="section-title">Find Us</h2>
+                <div id="map" class="scroll-reveal"></div>
+            </div>
+        </section>
+    </main>
+{% endblock body %}
