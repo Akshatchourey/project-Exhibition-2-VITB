@@ -1,0 +1,23 @@
+name: "pahal-project"
+services:
+  app:
+    image: "pahal-image2"
+    container_name: "pahal-project-compose1"
+    ports:
+      - "8001:8001"
+    volumes:
+      - .:/app
+    command:
+          python manage.py runserver 0.0.0.0:8001
+#    depends_on:
+#      - db
+#
+#  db:
+#    container_name: "MySql_db"
+#    image:
+#      mysql:5.7
+#    environment:
+#      MYSQL_DATABASE: "django-app-db"
+#      MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+#    volumes:
+#      - ./data/mysql/db:/user/lib/mysql
