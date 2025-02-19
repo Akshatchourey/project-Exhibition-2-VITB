@@ -1,0 +1,33 @@
+{% extends 'content/base.html' %}
+{% block body %}
+
+<div class="container">
+    <h1>Welcome to Pahal Foundation Forum</h1>
+    <p>You will find our community thoughts, views and opinion hare on current events as earliest.</p>
+    <div class="bmedia">
+        {% for bg in blogs %}
+        <div class="blog_body">
+            <h3 class=""><a href="/blogpost/{{bg.slug}}">{{bg.sno}}.{{bg.title}}</a></h3>
+            {{bg.time.date}}
+            <p>{{bg.content}}</p>
+            <a href="/blogpost/{{bg.slug}}"><button class="">Read More...</button></a>
+        </div>  
+        {% endfor %}
+    </div>
+    
+    <div class="">
+        {% if prev %}
+        <button class=""><a href="/blogs?page={{prev}}">&laquo; Previous</a></button>
+        {% else %}
+        <button class=""><a href="#">&laquo; Previous</a></button>
+        {% endif %}
+
+        {% if nxt %}
+        <button class=""><a href="/blogs?page={{nxt}}">Next &raquo;</a></button>
+        {% else %}
+        <button class=""><a href="#">Next &raquo;</a></button>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock body %}

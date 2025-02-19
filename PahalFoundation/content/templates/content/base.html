@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--    <link rel="stylesheet" href="{% static 'content/css/main-styles.css' %}">-->
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+{{request.first_name}}
+    <nav>
+        <ul class="nav-links">
+            <li><a href="/content/blogs">Blogs</a></li>
+            <li><a href="/videos" >Videos</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="/login">Login</a></li>
+            {% endif %}
+            <li><a href="/donate" class="active">Donate</a></li>
+        </ul>
+    </nav>
+        {% block body %}{% endblock body %}
+</body>
+</html>         
