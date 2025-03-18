@@ -11,14 +11,13 @@
 <body>
     <div class="container">
         <div class="form-container">
+            {% if messages %}
             <div>
-                {% if messages %}
-                <div>
-                    {% for message in messages %}
-                    {{message}}
-                    {% endfor %}
-                </div>
-                {% endif %}
+                {% for message in messages %}
+                {{message}}
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
             <h1>Login</h1>
             <form method="POST" id="login-form">

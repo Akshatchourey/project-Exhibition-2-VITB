@@ -46,25 +46,25 @@
                         <img src="" alt="Teaching">
                         <h3>Teaching Assistant</h3>
                         <p>Help children learn and grow in our education programs.</p>
-                        <a href="#volunteer-form" class="btn">Apply Now</a>
+                        <a href="/get_involved" class="btn">Apply Now</a>
                     </div>
                     <div class="opportunity-card">
                         <img src="" alt="Event Planning">
                         <h3>Event Coordinator</h3>
                         <p>Organize and manage community events and fundraisers.</p>
-                        <a href="#volunteer-form" class="btn">Apply Now</a>
+                        <a href="/get_involved" class="btn">Apply Now</a>
                     </div>
                     <div class="opportunity-card">
                         <img src="" alt="Mentoring">
                         <h3>Youth Mentor</h3>
                         <p>Guide and support young individuals in their personal development.</p>
-                        <a href="#volunteer-form" class="btn">Apply Now</a>
+                        <a href="/get_involved" class="btn">Apply Now</a>
                     </div>
                     <div class="opportunity-card">
                         <img src="" alt="Administrative Support">
                         <h3>Administrative Support</h3>
                         <p>Assist with office tasks and organizational management.</p>
-                        <a href="#volunteer-form" class="btn">Apply Now</a>
+                        <a href="/get_involved" class="btn">Apply Now</a>
                     </div>
                 </div>
                 <div class="slider-nav">
@@ -76,11 +76,21 @@
 
         <section id="volunteer-form" class="volunteer-signup">
             <div class="container">
+                <div class="form-container">
+                    {% if messages %}
+                    <div>
+                        {% for message in messages %}
+                        {{message}}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
                 <h2 class="section-title">Become a Volunteer</h2>
-                <form id="signup-form" class="scroll-reveal">
+                <form id="signup-form" method="post" class="scroll-reveal">
+                    {% csrf_token %}
                     <div class="form-group">
                         <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="fullname" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
@@ -92,7 +102,7 @@
                     </div>
                     <div class="form-group">
                         <label for="interest">Area of Interest</label>
-                        <select id="interest" name="interest" required>
+                        <select id="interest" name="interestArea" required>
                             <option value="">Select an option</option>
                             <option value="teaching">Teaching Assistant</option>
                             <option value="event">Event Coordinator</option>
@@ -103,7 +113,7 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Why do you want to volunteer?</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <textarea id="message" name="about" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn submit-btn">Submit Application</button>
                 </form>

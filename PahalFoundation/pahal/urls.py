@@ -12,7 +12,6 @@ urlpatterns = [
 
     # views2
     path('about/', views2.about, name='about'),
-    path('gallery/', views2.gallery, name='gallery'),
     path('volunteer/', views2.volunteer, name='volunteer'),
     path('get_involved/', views2.get_involved, name='get_involved'),
     path('contact/', views2.contact, name='contact'),

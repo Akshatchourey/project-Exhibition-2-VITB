@@ -9,7 +9,7 @@
         <div class="blog_body">
             <h3 class=""><a href="/blogpost/{{bg.slug}}">{{bg.sno}}.{{bg.title}}</a></h3>
             {{bg.time.date}}
-            <p>{{bg.content}}</p>
+            <p>{{bg.content|truncatewords:45}}</p>
             <a href="/blogpost/{{bg.slug}}"><button class="">Read More...</button></a>
         </div>  
         {% endfor %}
