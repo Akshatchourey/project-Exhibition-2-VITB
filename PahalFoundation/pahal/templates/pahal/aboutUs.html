@@ -2,5 +2,69 @@
 {% block title %} About Us {% endblock title %}
 {% block body %}
 {% load static %}
-about us page
+<link rel="stylesheet" href="{% static 'pahal/css/aboutUs-styles.css' %}">
+<div class="about-container">
+        <h1 class="about-title">About Us</h1>
+
+        <!-- Slogan -->
+        <p class="slogan">"Taking the First Step Towards a Brighter Future."</p>
+
+        <div class="about-section left">
+            <div class="about-content">
+                <h2>Our Story</h2>
+                <p>At Pehal Foundation, we believe that every child deserves a chance to dream, learn, and grow, regardless of their background. Founded with a vision to bridge the gap between privilege and need, Pehal Foundation is dedicated to supporting underprivileged children, especially those from the families of daily wage workers and marginalized communities.</p>
+            </div>
+            <div class="about-image">
+                <img src="{% static 'pahal/img/img1.jpg' %}" alt="Our Story">
+            </div>
+        </div>
+
+        <div class="about-section left">  <!-- Changed to left -->
+            <div class="about-image">
+                <img src="{% static 'pahal/img/img2.jpg' %}" alt="Our Mission">
+            </div>
+            <div class="about-content">
+                <h2>Our Mission</h2>
+                <p>Our mission is simple yet powerful—to ensure that no child is deprived of education, essential clothing, and the basic necessities that every child deserves. We aim to break the cycle of poverty through quality education, skill development, and holistic support.</p>
+            </div>
+        </div>
+
+        <div class="about-section left">
+            <div class="about-content">
+                <h2>Our Vision</h2>
+                <p>We envision a society where children are not defined by their circumstances but by their dreams and potential. Our goal is to create an environment where education is a right, not a privilege, and where every child feels seen, heard, and valued.</p>
+            </div>
+            <div class="about-image">
+                <img src="{% static 'pahal/img/img3.jpg' %}" alt="Our Vision">
+            </div>
+        </div>
+
+        <!-- Why We Exist Section -->
+        <div class="about-section left">
+            <div class="about-image">
+                <img src="{% static 'pahal/img/img1.jpg' %}" alt="Why We Exist">
+            </div>
+            <div class="about-content">
+                <h2>Why We Exist</h2>
+                <p>We exist because millions of children in India face barriers to education, nutrition, and basic healthcare. Without intervention, these children often fall into cycles of poverty, making it difficult for them to escape their circumstances. At Pehal Foundation, we strive to provide a pathway for these children to access education, build skills, and create a better future for themselves and their families.</p>
+            </div>
+        </div>
+
+        <!-- What We Do Section -->
+        <div class="about-section right">
+            <div class="about-content">
+                <h2>What We Do</h2>
+                <p>Our work involves providing free education, distributing essential resources like books, clothes, and food, and conducting skill-development programs for underprivileged children. We collaborate with volunteers and organizations to create safe learning environments and ensure long-term positive change in the lives of these children.</p>
+            </div>
+            <div class="about-image">
+                <img src="{% static 'pahal/img/img2.jpg' %}" alt="What We Do">
+            </div>
+        </div>
+
+        <!-- Volunteer Button -->
+        <div class="volunteer-section">
+            <a href="/volunteer" class="volunteer-button">Join Us in Making a Difference - Volunteer, Donate, or Spread the Word!</a>
+        </div>
+    </div>
+
 {% endblock body %}

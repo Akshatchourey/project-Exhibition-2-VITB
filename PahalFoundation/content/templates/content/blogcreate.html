@@ -5,6 +5,15 @@
     <form method="post">
         {% csrf_token %}
 
+        <div class="">
+            <label for="title">Blog Title</label>
+            <input type="text" id="title" name="blog_title" required>
+        </div>
+        <div class="">
+            <label for="blog_content">Write your content here.</label>
+            <textarea id="blog_content" name="main_content" rows="6" required></textarea>
+        </div>
+        <button type="submit" class="btn submit-btn">Submit Application</button>
     </form>
 </div>
 

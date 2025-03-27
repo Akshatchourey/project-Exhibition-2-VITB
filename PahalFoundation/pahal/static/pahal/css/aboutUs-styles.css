@@ -1,0 +1,119 @@
+/* General Styling */
+body {
+    background: #fffbe6;
+    font-family: 'Poppins', sans-serif;
+    color: #4d4d4d;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container */
+.about-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+/* Title Styling */
+.about-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #cc6600;
+    margin-bottom: 20px;
+}
+
+/* Slogan Styling */
+.slogan {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #cc6600;
+    margin-bottom: 30px;
+}
+
+/* Sections */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-section.left {
+    flex-direction: row;
+}
+
+/* Content Box */
+.about-content {
+    flex: 1;
+    padding: 20px;
+    background: #fff8d9;
+    border-radius: 15px;
+    text-align: center;
+    height: 250px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h2 {
+    color: #ff9900;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.about-content p {
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+/* Image Styling */
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid #ffcc00;
+}
+
+/* Volunteer Button */
+.volunteer-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.volunteer-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #ff9900;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.volunteer-button:hover {
+    background-color: #cc6600;
+}
