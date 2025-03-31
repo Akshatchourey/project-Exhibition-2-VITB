@@ -2,5 +2,6 @@ __pycache__
 *.idea
 *.env
 *.jpg
+*.jpeg
 /myenv
 PahalFoundation/PahalFoundation/settings.py

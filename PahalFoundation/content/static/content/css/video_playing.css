@@ -1,0 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+}
+.playlistbutton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+    padding-top: 9px;
+}
+.thumbnail{
+    width: 318px;
+    aspect-ratio: 16/9;
+    border-radius: 14px;
+    cursor: pointer;
+}
+.thumbnail_slip{
+    width: 168px;
+    aspect-ratio: 16/9;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* video */
+.media{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 16px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 35px;
+}
+.video_cards{
+    width: min-content;
+    margin-bottom: 18px;
+}
+.playlist_card{
+    width: min-content;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 5px solid;
+    padding: 10px;
+    border-radius: 15px;
+}
+.ctitle{
+    font-family: "Roboto","Arial",sans-serif;
+    font-size: 1.2rem;
+    padding-left: 3px;
+}
+.cdate{
+    padding-block: 4px;
+}
+.cdata{
+    font-size: 1.07rem;
+    padding-left: 3px;
+}
+
+/* video_playing */
+.vpsection0{
+    display: flex;
+    margin-inline: auto;
+    max-width: 1450px;
+}
+.vpsection1{
+    width: 70%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+}
+.vscreen{
+    width: 85%;
+    padding-left: 8%;
+    padding-top: 18px;
+    text-align: center;
+}
+.vscreen1{
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 15px;
+    object-fit: cover;
+}
+.vtitle{
+    padding-inline: 8%;
+    font-family: "Roboto","Arial",sans-serif;
+    font-size: 2rem;
+    line-height: 2.8rem;
+    font-weight: 600;
+}
+.vlike{
+    font-size: 1.4rem;
+}
+.vdescription{
+    margin-inline: 7%;
+    font-family: "Roboto","Arial",sans-serif;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    font-weight: 350;
+    background-color: gray;
+    border-radius: 12px;
+    padding: 12px;
+}
+.vdesc{
+    /* width: inherit; */
+}
+
+.vpsection2{
+    width: 31%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+}
+.moreV{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 590px;
+}
+.plvs{
+    border: 4px solid darkgray;
+    border-radius: 11px;
+    margin-bottom: 30px;
+}
+.plslip{
+    height: auto;
+    max-height: 456px;
+}
+.video_slip{
+    margin-block: 6px;
+    display: flex;
+    flex-direction: row;
+    background-color:white;
+}
+.sdiv{
+    padding: 3px;
+}
+.stitle{
+    font-family: "Roboto","Arial",sans-serif;
+    font-size: 1.1rem;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}

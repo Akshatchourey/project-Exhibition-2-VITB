@@ -1,0 +1,25 @@
+{% extends 'content/base.html' %}
+{% block body %}
+{% load static %}
+
+<div class="playlistbutton">
+    <button class="button-1" ><a href="/videos">Videos</a></button>
+    <button class="button-1" ><a href="/playlist/GA">gaming</a></button>
+    <button class="button-1" ><a href="/playlist/ED">python</a></button>
+</div>
+
+<h1>All playlists</h1>
+<div class="media">
+    {% for p in playlists %}
+    <div class="playlist_card">
+        <img class="thumbnail" src="{{MEDIA_URL}}{{p.thumbnail.url}}" onclick="location.href = '/playlist/{{p.slug}}'">
+        <div>
+            <h class="ctitle"><a href="/playlist/{{p.slug}}">{{p.title}}</a></h>
+            <p class="cdate">{{p.date.date}}</p>
+            <p class="cdata">{{p.desc}}</p>
+        </div>
+        <button class="button-2" ><a href="/playlist/{{p.slug}}">View PlayList</a></button>
+    </div>
+    {% endfor %}  
+</div>
+{% endblock body %}

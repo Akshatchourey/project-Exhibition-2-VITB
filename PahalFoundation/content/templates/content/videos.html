@@ -1,0 +1,40 @@
+{% extends 'content/base.html' %}
+{% block body %}
+{% load static %}
+<div class="playlistbutton">
+    <div class="">
+        {% if prev %}
+        <button class="button-2"><a href="/videos?page={{prev}}">&laquo; Previous</a></button>
+        {% else %}
+        <button class="button-2"><a href="#">&laquo; Previous</a></button>
+        {% endif %}
+
+        {% if nxt %}
+        <button class="button-2"><a href="/videos?page={{nxt}}">Next &raquo;</a></button>
+        {% else %}
+        <button class="button-2"><a href="#">Next &raquo;</a></button>
+        {% endif %}
+    </div>
+
+    <button class="button-1"><a href="/videos">All</a></button>
+    <button class="button-1"><a href="/playlists">playlist</a></button>
+    <button class="button-1"><a href="/playlist/GA">gaming</a></button>
+    <button class="button-1"><a href="/playlist/ED">education</a></button>
+</div>
+
+<div class="media">
+{% for v in videos %}
+    <div class="video_cards">
+        <img class="thumbnail" src="{{MEDIA_URL}}{{v.thumbnail.url}}" onclick="location.href = '/video_playing/{{v.slug}}'">
+        <div>
+            <h><a class="ctitle" href="/video_playing/{{v.slug}}">{{v.title}}</a></h>
+            <div>
+                <p class="cdata">views {{v.views}} | Likes {{v.likes}}</p>
+                <p class="cdata">{{v.date.date}}</p>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+     
+{% endblock body %}

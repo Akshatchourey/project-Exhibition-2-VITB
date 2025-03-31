@@ -1,0 +1,61 @@
+{% extends 'content/base.html' %}
+{% block body %}
+{% load static %}
+
+<div class="vpsection0">
+    <div class="vpsection1">
+        <div class="vscreen">
+            {% if types == "https" %}
+            <iframe class="vscreen1" src="{{name.source}}" frameborder="0" 
+            allow="accelerometer; encrypted-media; gyroscope; web-share" allowfullscreen></iframe>
+            {% else %}
+            <video class="vscreen1" preload="metadata" poster="{{MEDIA_URL}}{{name.thumbnail.url}}" controls="controls">
+                <source src= "\media\{{name.source}}">
+            </video>
+            {% endif %}
+        </div>
+        <h class="vtitle">{{name.title}}</h>
+        <p class="vtitle vlike">{{name.views}} views | Likes {{name.likes}}</p>
+        <div class="vdescription">
+            <p>{{name.date.date}}</p>
+            <p class="vdesc">{{name.desc}}</p>
+        </div>
+    </div>
+    <div class="vpsection2">
+        <div class="playlistbutton">
+            <button class="button-1"><a href="/videos">All</a></button>
+            <button class="button-1"><a href="/playlists">playlist</a></button>
+            <button class="button-1"><a href="/playlist/GA">gaming</a></button>
+            <button class="button-1"><a href="/playlist/ED">python</a></button>
+        </div>
+        {% if plvideos != 'None' %}
+        <div class="plvs">
+            <h1 style="background-color: darkgray; padding-left: 7px;">PlayList Videos</h1>
+            <div class="moreV plslip">
+                {% for v in plvideos %}
+                    <div class="video_slip">
+                        <img class="thumbnail_slip" src="{{MEDIA_URL}}{{v.thumbnail.url}}" onclick="location.href = '/video_playing/{{v.slug}}'">
+                        <div class="sdiv">
+                            <h class="stitle"><a href="/video_playing/{{v.slug}}" class="text-dark">{{v.title}}</a></h>
+                            <p class="sdata">views {{v.views}} | Likes {{v.likes}} | {{v.date}}</p>
+                        </div>    
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        <div class="moreV">
+            {% for v in mvideos %}
+                <div class="video_slip">
+                    <img class="thumbnail_slip" src="{{MEDIA_URL}}{{v.thumbnail.url}}" onclick="location.href = '/video_playing/{{v.slug}}'">
+                    <div class="sdiv">
+                        <h class="stitle"><a href="/video_playing/{{v.slug}}" class="text-dark">{{v.title}}</a></h>
+                        <p class="sdata">views {{v.views}} | Likes {{v.likes}} | {{v.date.date}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

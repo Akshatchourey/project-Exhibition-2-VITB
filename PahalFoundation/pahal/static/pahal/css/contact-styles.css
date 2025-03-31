@@ -44,7 +44,7 @@
   }
   
   #contact-form {
-    max-width: 600px;
+    max-width: 690px;
     margin: 0 auto;
     padding: 2rem;
     background: var(--white);
@@ -134,14 +134,14 @@
   .social-links {
     margin-top: 1rem;
   }
-  
+
   .social-links a {
     color: var(--text-color);
     margin: 0 0.5rem;
     font-size: 1.2rem;
     transition: var(--transition);
   }
-  
+
   .social-links a:hover {
     color: var(--primary-color);
   }
@@ -158,17 +158,6 @@
     overflow: hidden;
   }
 
-  .social-links a {
-    color: var(--white);
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    transition: var(--transition);
-  }
-  
-  .social-links a:hover {
-    color: var(--primary-color);
-  }
-  
   .footer-bottom {
     text-align: center;
     padding-top: 2rem;

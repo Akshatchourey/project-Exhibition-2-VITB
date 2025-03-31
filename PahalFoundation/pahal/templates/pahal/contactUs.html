@@ -45,14 +45,19 @@
         <section class="contact-form">
             <div class="container">
                 <h2 class="section-title">Send Us a Message</h2>
-                <form id="contact-form" class="scroll-reveal">
+                <form id="contact-form" method="post" class="scroll-reveal">
+                    {% csrf_token %}
                     <div class="form-group">
                         <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="fullname" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Your Email</label>
                         <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
                     </div>
                     <div class="form-group">
                         <label for="subject">Subject</label>
@@ -73,45 +78,45 @@
                 <div class="team-grid">
                     <div class="team-member scroll-reveal">
                         <div class="member-image">
-                            <img src="" alt="Rahul Sharma">
+                            <img src="{% static 'pahal/img/dev1.jpg' %}" alt="Akshat Chourey">
                         </div>
-                        <h3>Rahul Sharma</h3>
+                        <h3>Akshat Chourey</h3>
                         <p>Lead Developer</p>
                         <div class="social-links">
-                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/akshat-chourey-203011280/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/Akshatchourey" target="_blank"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <div class="team-member scroll-reveal">
                         <div class="member-image">
-                            <img src="" alt="Priya Patel">
+                            <img src="{% static 'pahal/img/dev2.jpeg' %}" alt="Rudra Gupta">
                         </div>
-                        <h3>Priya Patel</h3>
+                        <h3>Rudra Gupta</h3>
                         <p>Frontend Developer</p>
                         <div class="social-links">
-                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://in.linkedin.com/in/rudrag23/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/Rudragupta23" target="_blank"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <div class="team-member scroll-reveal">
                         <div class="member-image">
-                            <img src="" alt="Amit Kumar">
+                            <img src="{% static 'pahal/img/dev3.jpeg' %}" alt="Vanshika Dhaka">
                         </div>
-                        <h3>Amit Kumar</h3>
-                        <p>Backend Developer</p>
+                        <h3>Vanshika Dhaka</h3>
+                        <p>Frontend Developer</p>
                         <div class="social-links">
-                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://in.linkedin.com/in/vanshika-dhaka-1b5ab82b2" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/VANSHIKADHAKA" target="_blank"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <div class="team-member scroll-reveal">
                         <div class="member-image">
-                            <img src="" alt="Neha Gupta">
+                            <img src="{% static 'pahal/img/dev4.jpg' %}" alt="Shorya Phatak">
                         </div>
-                        <h3>Neha Gupta</h3>
+                        <h3>Shorya Pathak</h3>
                         <p>UI/UX Designer</p>
                         <div class="social-links">
-                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://in.linkedin.com/in/shorya-pathak-a8950228a" target="_blank"><i class="fab fa-linkedin"></i></a>
                             <a href="#" target="_blank"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
