@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -10,12 +11,22 @@ class Blog(models.Model):
     slug = models.CharField(max_length=100)
     time = models.DateTimeField(auto_now_add=True)
     # thumbnail = models.ImageField(max_length=300)
-    content = models.TextField()
+    content = RichTextField(blank=True, null=True)
     views = models.PositiveIntegerField()
     likes = models.PositiveIntegerField()
 
     def __str__(self):
         return self.title
+
+class BlogComment(models.Model):
+    blog = models.ForeignKey(Blog, related_name="blogComment", on_delete=models.CASCADE)
+    name = models.CharField(max_length=250)
+    body = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return "%s - %s" % (self.blog.title, self.name)
+
 class Video(models.Model):
     sno = models.AutoField(primary_key=True)
     pf = models.CharField(max_length=1)

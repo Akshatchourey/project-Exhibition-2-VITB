@@ -3,13 +3,12 @@
 
 <div class="container">
     <h1>Welcome to Pahal Foundation Forum</h1>
-    <p>You will find our community thoughts, views and opinion hare on current events as earliest.</p>
     <div class="media">
         <div class="media-body">
             <h2 class="mt-0">{{name.sno}}.{{name.title}}</h2>
             {{name.owner}}
             <br>{{name.time}}<br>
-            <p>{{name.content}}</p>
+            <p>{{name.content|safe}}</p>
         </div>
         <a href="/blogs" class="text-dark"><button class="btn btn-primary">More Blogs...</button></a>
     </div>

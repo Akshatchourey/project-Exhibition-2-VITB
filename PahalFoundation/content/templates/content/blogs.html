@@ -1,33 +1,64 @@
 {% extends 'content/base.html' %}
 {% block body %}
+{% load static %}
 
-<div class="container">
-    <h1>Welcome to Pahal Foundation Forum</h1>
-    <p>You will find our community thoughts, views and opinion hare on current events as earliest.</p>
-    <div class="bmedia">
-        {% for bg in blogs %}
-        <div class="blog_body">
-            <h3 class=""><a href="/blogpost/{{bg.slug}}">{{bg.sno}}.{{bg.title}}</a></h3>
-            {{bg.time.date}}
-            <p>{{bg.content|truncatewords:45}}</p>
-            <a href="/blogpost/{{bg.slug}}"><button class="">Read More...</button></a>
-        </div>  
-        {% endfor %}
+<link rel="stylesheet" href="{% static 'content/css/blog-styles.css' %}">
+<section class="blog-s1">
+    <div class="blog-container">
+        <h1 class="blog-title">Welcome to Pahal Foundation Forum</h1>
+<!--        <p>You will find our community thoughts, views and opinion hare on current events as earliest.</p>-->
+        <div>
+            {% for bg in blogs %}
+            <div class="blog-item">
+                <h3 class="blog-title"><a href="/blogpost/{{bg.slug}}">{{bg.sno}}.{{bg.title}}</a></h3>
+                <p class="blog-meta">{{bg.time.date}}</p>
+                <p class="blog-content">{{bg.content|safe|truncatewords:48}}</p>
+                <a href="/blogpost/{{bg.slug}}"><button class="blog-btn">Read More...</button></a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="">
+            {% if prev %}
+            <a href="/blogs?page={{prev}}"><button class="blog-btn">&laquo; Previous</button></a>
+            {% else %}
+            <a href="#"><button class="blog-btn">&laquo; Previous</button></a>
+            {% endif %}
+
+            {% if nxt %}
+            <a href="/blogs?page={{nxt}}"><button class="blog-btn">Next &raquo;</button></a>
+            {% else %}
+            <a href="#"><button class="blog-btn">Next &raquo;</button></a>
+            {% endif %}
+        </div>
     </div>
-    
-    <div class="">
-        {% if prev %}
-        <button class=""><a href="/blogs?page={{prev}}">&laquo; Previous</a></button>
-        {% else %}
-        <button class=""><a href="#">&laquo; Previous</a></button>
-        {% endif %}
+    <div class="updates-container">
+        <h1 class="blog-title">Updates</h1>
+        <div class="card">
+            <h2 class="up-title">Today's Goals</h2>
+            <ul>
+                <li>Enroll 10 new students in the literacy program.</li>
+                <li>Distribute 50 school supplies to underprivileged children.</li>
+                <li>Conduct a workshop on digital literacy.</li>
+            </ul>
+        </div>
 
-        {% if nxt %}
-        <button class=""><a href="/blogs?page={{nxt}}">Next &raquo;</a></button>
-        {% else %}
-        <button class=""><a href="#">Next &raquo;</a></button>
-        {% endif %}
+        <div class="card">
+            <h2 class="up-title">This Week's Goals</h2>
+            <ul>
+                <li>Raise $500 for the scholarship fund.</li>
+                <li>Organize a community awareness event.</li>
+                <li>Volunteer recruitment drive for the upcoming semester.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2 class="up-title">Upcoming Events</h2>
+            <ul>
+                <li>April 23, 2025: Community Clean-Up Day</li>
+                <li>May 15, 2025: Annual Fundraiser</li>
+            </ul>
+        </div>
     </div>
-</div>
-
+</section>
 {% endblock body %}
