@@ -4,9 +4,16 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'pahal/css/volunteer-styles.css' %}">
     <header class="hero">
-        <div class="hero-content">
-            <h1 class="fade-in">Join Our Cause</h1>
-            <p class="fade-in">Make a difference in your community by volunteering with Pahal Foundation</p>
+        <div class="slider-wrapper">
+            <div class="text-overlay">
+                <h1 class="fade-in">Join Our Cause</h1>
+                <p class="fade-in">Make a difference in your community by volunteering with Pahal Foundation</p>
+            </div>
+            <div class="slider">
+                <div class="slide"><img src="{% static 'pahal/img/imgVol3.jpg' %}" alt="Children making peace signs"></div>
+                <div class="slide"><img src="{% static 'pahal/img/imgVol1.jpg' %}" alt="Children sitting together"></div>
+                <div class="slide"><img src="{% static 'pahal/img/imgVol2.jpg' %}" alt="Students in uniforms"></div>
+            </div>
         </div>
     </header>
     <main>

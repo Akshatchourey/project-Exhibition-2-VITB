@@ -16,5 +16,6 @@ urlpatterns = [
     path('playlist/<str:slug>', views2.plvideos, name='video_in_playlist'),
 
     # views3
+    path('dashboard/profile/', views3.profile, name="profile"),
     path('create_blog/',views3.create_blog,name="create_blog"),
 ]

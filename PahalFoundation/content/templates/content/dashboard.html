@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'content/css/dashboard-styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Admin Panel</title>
+</head>
+<body>
+<div class="side-menu">
+    <div class="brand-name"><a href="/">Pahal Foundation VITB</a></div>
+    <div class="menu-item" onclick="toggleMenu('dashboardMenu')">
+        <span><i class="fa fa-home"></i> Dashboard</span>
+        <i class="fa fa-angle-down"></i>
+    </div>
+    <div id="dashboardMenu" class="submenu">
+        <a href="overview.html">Overview</a>
+        <a href="reports.html">Reports</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleMenu('studentsMenu')">
+        <span><i class="fa fa-user-graduate"></i> Students</span>
+        <i class="fa fa-angle-down"></i>
+    </div>
+    <div id="studentsMenu" class="submenu">
+        <a href="attendance.html">Attendance</a>
+        <a href="admissions.html">Admissions</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleMenu('volunteersMenu')">
+        <span><i class="fa fa-hands-helping"></i> Volunteers</span>
+        <i class="fa fa-angle-down"></i>
+    </div>
+    <div id="volunteersMenu" class="submenu">
+        <a href="volunteers.html">Volunteer Info</a>
+        <a href="enrollments.html">Enrollments</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleMenu('contentMenu')">
+        <span><i class="fa fa-pen"></i> Content & Media</span>
+        <i class="fa fa-angle-down"></i>
+    </div>
+    <div id="contentMenu" class="submenu">
+        <a href="blogs.html">Blogs</a>
+        <a href="videos.html">Videos</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleMenu('reportsMenu')">
+        <span><i class="fa fa-chart-bar"></i> Reports</span>
+        <i class="fa fa-angle-down"></i>
+    </div>
+    <div id="reportsMenu" class="submenu">
+        <a href="student_analysis.html">Student Analysis</a>
+        <a href="volunteer_analysis.html">Volunteer Analysis</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleMenu('settingsMenu')">
+        <span><i class="fa fa-cogs"></i> Settings</span>
+        <i class="fa fa-angle-down"></i>
+    </div>
+    <div id="settingsMenu" class="submenu">
+        <a href="general.html">General</a>
+        <a href="security.html">Security</a>
+        <a href="logout.html">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="header">
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button class="btn"><i class="fa fa-search"></i></button>
+        </div>
+    </div>
+</div>
+
+{% block body %}{% endblock body %}
+
+<script>
+    function toggleMenu(menuId) {
+        var menu = document.getElementById(menuId);
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+</script>
+</body>
+</html>

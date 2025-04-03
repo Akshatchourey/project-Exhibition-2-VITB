@@ -3,9 +3,16 @@
 {% block body %}
 {% load static %}
    <header class="hero">
-        <div class="hero-content">
-            <h1 class="fade-in">Empowering Communities</h1>
-            <p class="fade-in">Building a better future through education and support</p>
+        <div class="slider-wrapper">
+            <div class="text-overlay">
+                <h1 class="fade-in">Empowering Communities</h1>
+                <p class="fade-in">Building a better future through education and support</p>
+            </div>
+            <div class="slider">
+                <div class="slide"><img src="{% static 'pahal/img/img1.jpg' %}" alt="Children making peace signs"></div>
+                <div class="slide"><img src="{% static 'pahal/img/img2.jpg' %}" alt="Children sitting together"></div>
+                <div class="slide"><img src="{% static 'pahal/img/img3.jpg' %}" alt="Students in uniforms"></div>
+            </div>
         </div>
     </header>
 

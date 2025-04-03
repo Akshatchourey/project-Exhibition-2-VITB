@@ -1,5 +1,18 @@
 // home elements
 document.addEventListener("DOMContentLoaded",()=>{
+    // Image Slider
+    const slider = document.querySelector('.slider');
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // Change slide every 3 seconds
+    setInterval(nextSlide, 3000);
+
     // Counter Animation
     const counters = document.querySelectorAll(".counter")
     const speed = 200
