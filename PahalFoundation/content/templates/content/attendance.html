@@ -1,0 +1,38 @@
+{% extends 'content/dashboard.html' %}
+{% block body %}
+{% load static %}
+ this is attendance
+<div class="container attendance-container">
+    <h1>Take Attendance</h1>
+    <div class="table-container">
+        <form method="post">
+            {% csrf_token %}
+        <button id="save-attendance" class="btn primary-btn">Save Attendance</button>
+        <table id="attendance-table">
+            <thead>
+            <tr>
+                <th>Roll No.</th>
+                <th>Student Name</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for st in students %}
+            <tr>
+                <td>{{st.roll_no}}</td>
+                <td>{{st.name}}</td>
+                <td>
+                    <select class="status-select" id={{st.roll_no}}>
+                        <option value="">Select Status</option>
+                        <option value="present" class="status-present">Present</option>
+                        <option value="absent" class="status-absent">Absent</option>
+                    </select>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </form>
+    </div>
+</div>
+{% endblock body %}

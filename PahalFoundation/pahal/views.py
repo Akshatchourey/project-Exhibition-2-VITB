@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User, Group
 
 # Create your views here.
@@ -57,3 +58,8 @@ def login_page(request):
 def logout_page(request):
     logout(request)
     return redirect('/')
+
+@login_required(login_url="/login")
+def change_password(request):
+
+    return render(request, "pahal/change_password.html")

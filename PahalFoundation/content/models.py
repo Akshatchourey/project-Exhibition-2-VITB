@@ -58,6 +58,7 @@ class Playlist(models.Model):
 
 class Student(models.Model):
     roll_no = models.IntegerField(primary_key=True)
+    active = models.BooleanField(default=1)
     name = models.CharField(max_length=70)
     parents_name = models.CharField(max_length=100)
     phone_no = models.CharField(max_length=12)
@@ -65,6 +66,14 @@ class Student(models.Model):
     gender = models.CharField(max_length=10)
     date = models.DateTimeField(auto_now_add=True)
     photo = models.ImageField(upload_to ='students/')
+
+class Attendance(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name="attendances")
+    date = models.DateField(auto_now_add=True)
+    status = models.CharField(max_length=10)
+
+    class Meta:
+        unique_together = ('student', 'date')
 
 class Volunteer(models.Model):
     Reg_no = models.CharField(primary_key=True, max_length=70)

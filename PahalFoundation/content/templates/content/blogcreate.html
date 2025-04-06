@@ -1,18 +1,15 @@
-{% extends 'content/base.html' %}
+{% extends 'content/dashboard.html' %}
 {% block body %}
+{% load static %}
 <div class="container">
     <h1>Create Your new Blog here!!</h1>
     <form method="post">
         {% csrf_token %}
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" placeholder="Enter blog title" required><br><br>
 
-        <div class="">
-            <label for="title">Blog Title</label>
-            <input type="text" id="title" name="blog_title" required>
-        </div>
-        <div class="">
-            <label for="blog_content">Write your content here.</label>
-            <textarea id="blog_content" name="main_content" rows="6" required></textarea>
-        </div>
+        <label for="content">Content:</label>
+        <textarea name="content" id="content" placeholder="Write your blog content"></textarea><br><br>
         <button type="submit" class="btn submit-btn">Submit Application</button>
     </form>
 </div>

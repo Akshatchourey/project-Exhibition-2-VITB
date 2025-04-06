@@ -1,0 +1,11 @@
+{% extends 'content/dashboard.html' %}
+{% block body %}
+<div class="container">
+    <h1>Admission Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn submit-btn">Submit Application</button>
+    </form>
+</div>
+
+{% endblock body %}

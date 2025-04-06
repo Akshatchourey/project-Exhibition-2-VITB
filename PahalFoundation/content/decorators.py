@@ -1,7 +1,9 @@
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 def allowed_users(allowed_roles=[]):
     def decorator(view_func):
+        @login_required(login_url="/login/")
         def wrapper_func(request, *args, **kwargs):
             group = None
             if request.user.groups.exists():

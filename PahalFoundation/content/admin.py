@@ -9,3 +9,5 @@ admin.site.register(Playlist)
 
 admin.site.register(Student)
 admin.site.register(Volunteer)
+
+admin.site.register(Attendance)

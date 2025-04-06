@@ -11,7 +11,7 @@
             {% for bg in blogs %}
             <div class="blog-item">
                 <h3 class="blog-title"><a href="/blogpost/{{bg.slug}}">{{bg.sno}}.{{bg.title}}</a></h3>
-                <p class="blog-meta">{{bg.time.date}}</p>
+                <p class="blog-meta">{{bg.owner}} | {{bg.time.date}}</p>
                 <p class="blog-content">{{bg.content|safe|truncatewords:48}}</p>
                 <a href="/blogpost/{{bg.slug}}"><button class="blog-btn">Read More...</button></a>
             </div>

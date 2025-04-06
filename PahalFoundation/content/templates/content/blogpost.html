@@ -5,12 +5,34 @@
     <h1>Welcome to Pahal Foundation Forum</h1>
     <div class="media">
         <div class="media-body">
-            <h2 class="mt-0">{{name.sno}}.{{name.title}}</h2>
-            {{name.owner}}
-            <br>{{name.time}}<br>
-            <p>{{name.content|safe}}</p>
+            <h2 class="mt-0">{{post.title}}</h2>
+            {{post.owner}} | {{post.time}}
+            views {{post.views}} | Likes {{post.likes}}
+            <p>{{post.content|safe}}</p>
         </div>
         <a href="/blogs" class="text-dark"><button class="btn btn-primary">More Blogs...</button></a>
+    </div>
+    <div class="">
+        <h2>Comment Section</h2>
+
+        {% if request.user.is_authenticated %}
+        <form method="post">
+            {% csrf_token %}
+            <div class="">
+                <input type="text" id="new_comment" name="new_comment" required>
+            </div>
+            <button type="submit" class="btn submit-btn">Comment</button>
+        </form>
+        {% endif %}
+
+        {% if not post.blogComment.all %}
+            No Comments yet...Add one
+        {% else %}
+            {% for comment in post.blogComment.all %}
+                {{comment.name}} | {{comment.date|date:"d-m-Y"}}
+                <p>{{comment.body}}</p>
+            {% endfor %}
+        {% endif %}
     </div>
 </div>
 
