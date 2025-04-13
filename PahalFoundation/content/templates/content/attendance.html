@@ -1,13 +1,13 @@
 {% extends 'content/dashboard.html' %}
 {% block body %}
 {% load static %}
- this is attendance
+<link rel="stylesheet" href="{% static 'content/css/dashboard-styles-2.css' %}">
 <div class="container attendance-container">
     <h1>Take Attendance</h1>
     <div class="table-container">
         <form method="post">
             {% csrf_token %}
-        <button id="save-attendance" class="btn primary-btn">Save Attendance</button>
+        <button id="save-attendance" class="btn attendance-btn">Save Attendance</button>
         <table id="attendance-table">
             <thead>
             <tr>
@@ -19,10 +19,10 @@
             <tbody>
             {% for st in students %}
             <tr>
-                <td>{{st.roll_no}}</td>
-                <td>{{st.name}}</td>
+                <td><span>{{st.roll_no}}</span></td>
+                <td><span>{{st.name}}</span></td>
                 <td>
-                    <select class="status-select" id={{st.roll_no}}>
+                    <select class="status-select" id="{{st.roll_no}}" name="rollNo{{st.roll_no}}">
                         <option value="">Select Status</option>
                         <option value="present" class="status-present">Present</option>
                         <option value="absent" class="status-absent">Absent</option>

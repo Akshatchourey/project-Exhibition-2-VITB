@@ -13,3 +13,13 @@ class WriteBlog(forms.ModelForm):
         }
 
     content = forms.CharField(widget=CKEditor5Widget)
+
+class Admission(forms.ModelForm):
+    class Meta:
+        model = Student
+        exclude = ['active']
+
+class VolunteerEnrolment(forms.ModelForm):
+    class Meta:
+        model = Volunteer
+        exclude = []

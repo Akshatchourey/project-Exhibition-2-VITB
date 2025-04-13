@@ -18,8 +18,11 @@ urlpatterns = [
 
     # views3
     path('dashboard/profile/', views3.profile, name="profile"),
+    path('dashboard/timetable/', views3.timetable, name="timetable"),
+    path('dashboard/student-info/', views3.student_info, name="student_info"),
     path('dashboard/attendance/', views3.attendance, name="attendance"),
     path('dashboard/admission/',views3.admission,name="admission"),
+    path('dashboard/volunteer-enrolment/',views3.volunteer_enrolment,name="volunteer_enrolment"),
     path('dashboard/create_blog/',views3.create_blog,name="create_blog"),
 
 ]

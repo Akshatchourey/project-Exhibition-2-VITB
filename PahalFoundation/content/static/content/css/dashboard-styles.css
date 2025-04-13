@@ -35,11 +35,15 @@
      background: white;
      border: 2px solid #f05462;
  }
-
+ .dashboard{
+     display:flex;
+ }
+ .dashboard-right{
+     width:80%;
+ }
  /* Sidebar */
  .side-menu {
-     position: fixed;
-     width: 20vw;
+     width: 18%;
      min-height: 100vh;
      background: #f05462;
      display: flex;
@@ -89,10 +93,11 @@
  }
 
  /* Main Content */
- .container {
-     margin-left: 20vw;
-     width: 80vw;
-     padding: 20px;
+ .container{
+    padding:20px
+ }
+ .dashboard-container {
+     padding-inline: 20px;
  }
 
  .header {
@@ -142,3 +147,33 @@
  .card:hover {
      transform: scale(1.05);
  }
+
+ /* admission form css */
+ .form-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 730px;
+  margin: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #333;
+}
+
+.submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}

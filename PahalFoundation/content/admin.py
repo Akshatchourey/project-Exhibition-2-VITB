@@ -11,3 +11,4 @@ admin.site.register(Student)
 admin.site.register(Volunteer)
 
 admin.site.register(Attendance)
+admin.site.register(Progress)

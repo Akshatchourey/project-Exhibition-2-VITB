@@ -1,10 +1,63 @@
 {% extends 'content/dashboard.html' %}
 {% block body %}
-<div class="container">
-    <h1>Admission Form</h1>
+<style>
+  label {
+    display: block;
+    margin: 15px 0 5px;
+    color: #333;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+</style>
+<div class="form-container">
+    <h2>Student Admission Form</h2>
     <form method="post">
         {% csrf_token %}
-        <button type="submit" class="btn submit-btn">Submit Application</button>
+      <label for="roll_no">Registration Number</label>
+      <input type="number" id="roll_no" name="roll_no" required>
+
+      <label for="name">Student Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="parents">Parent's Name</label>
+      <input type="text" id="parents" name="parents_name" required>
+
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" min="3" max="20" required>
+
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" required>
+        <option value="">--Select--</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="photo">Upload Photo</label>
+      <input type="file" id="photo" name="photo" accept="image/*" required>
+
+      <label for="admission_date">Date of Admission</label>
+      <input type="date" id="admission_date" name="date" required>
+
+      <label for="contact">Contact Number</label>
+      <input type="tel" id="contact" name="phone_no" pattern="[0-9]{10}" required>
+
+      <label for="address">Residential Address</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <label for="class">Class/Grade</label>
+      <input type="text" id="class" name="grade" required>
+
+      <label for="prev_school">Previous School (if any)</label>
+      <input type="text" id="prev_school" name="prev_school">
+
+      <button class="submit-btn" type="submit">Submit Admission Form</button>
     </form>
 </div>
 

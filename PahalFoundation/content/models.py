@@ -59,13 +59,19 @@ class Playlist(models.Model):
 class Student(models.Model):
     roll_no = models.IntegerField(primary_key=True)
     active = models.BooleanField(default=1)
-    name = models.CharField(max_length=70)
-    parents_name = models.CharField(max_length=100)
+    name = models.CharField(max_length=40)
+    parents_name = models.CharField(max_length=40)
+    address = models.CharField(max_length=40, blank=True, default='')
     phone_no = models.CharField(max_length=12)
     age = models.IntegerField()
     gender = models.CharField(max_length=10)
     date = models.DateTimeField(auto_now_add=True)
-    photo = models.ImageField(upload_to ='students/')
+    photo = models.ImageField(upload_to ='students/', null=True)
+    grade = models.CharField(max_length=10, blank=True, default='')
+    prev_school = models.CharField(max_length=30, blank=True, default='')
+
+    def __str__(self):
+        return "%s. %s" % (self.roll_no, self.name)
 
 class Attendance(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name="attendances")
@@ -75,10 +81,29 @@ class Attendance(models.Model):
     class Meta:
         unique_together = ('student', 'date')
 
+    def __str__(self):
+        return "%s. %s" % (self.student.name, self.date)
+
 class Volunteer(models.Model):
     Reg_no = models.CharField(primary_key=True, max_length=70)
     name = models.CharField(unique=True, null=False, max_length=70)
     designation = models.CharField(max_length=25)
     email = models.EmailField(max_length=80)
     phone_no = models.CharField(max_length=12)
-    photo = models.ImageField(upload_to ='volunteer/')
+    photo = models.ImageField(upload_to ='volunteer/', null=True)
+    interest = models.CharField(max_length=40, blank=True, default='')
+    experience = models.CharField(max_length=40, blank=True, default='')
+
+    def __str__(self):
+        return "%s. %s" % (self.name, self.designation)
+
+class Progress(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name="progress_repost")
+    last_update = models.DateTimeField(auto_now_add=True)
+    math = models.CharField(max_length=60, blank=True, null=True)
+    hindi = models.CharField(max_length=60, blank=True, null=True)
+    english = models.CharField(max_length=60, blank=True, null=True)
+    extra_curricular = models.CharField(max_length=60, blank=True, null=True)
+
+    def __str__(self):
+        return "%s. %s" % (self.student.name, self.last_update)
