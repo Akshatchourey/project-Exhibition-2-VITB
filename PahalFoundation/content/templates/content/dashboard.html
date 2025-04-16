@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'content/css/dashboard-styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/icon" href="{% static 'pahal/icon/favicon.ico' %}">
     <title>Admin Panel</title>
 </head>
 <body>
@@ -43,7 +44,7 @@
             <i class="fa fa-angle-down"></i>
         </div>
         <div id="volunteersMenu" class="submenu">
-            <a href="/error404">Volunteer Info</a>
+            <a href="/dashboard/volunteer-info">Volunteer Info</a>
             <a href="/dashboard/volunteer-enrolment">Enrollments</a>
         </div>
         {% endif %}

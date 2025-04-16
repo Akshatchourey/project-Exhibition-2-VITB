@@ -9,10 +9,8 @@ class WriteBlog(forms.ModelForm):
         fields = ['title', 'content']
         widgets = {
             'title': forms.TextInput(attrs={'placeholder': 'Enter blog title'}),
-            'content': forms.Textarea(attrs={'placeholder': 'Write your blog content here'}),
+            'content': CKEditor5Widget(attrs={"class": "django_ckeditor_5"}, config_name="extends"),
         }
-
-    content = forms.CharField(widget=CKEditor5Widget)
 
 class Admission(forms.ModelForm):
     class Meta:

@@ -188,21 +188,6 @@
   .burger {
     display: block;
   }
-
-  .nav-links{
-    background-color: var(--white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in;
-  }
-
-  .nav-active {
-    transform: translateX(0%);
-  }
-
   .section-title {
     font-size: 2rem;
   }

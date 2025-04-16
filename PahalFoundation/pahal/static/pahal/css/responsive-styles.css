@@ -1,0 +1,37 @@
+@media only screen and (max-width: 1047px){
+  .nav-bar{
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 880px){
+  .name-res{
+    content-visibility: hidden;
+  }
+  .pizza{
+    transform:rotate(50deg);
+   }
+  .r-pizza-resp{
+    transition: transform .8s ease-in-out;
+  }
+  .nav-bar{
+    flex-direction: column;
+    transition: all 0.6s ease-out;
+  }
+  .h-nav-resp{
+    height: auto;
+  }
+  .nav-links{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+  }
+  .nav-links-res{
+    content-visibility: hidden;
+  }
+
+  /* about image resp*/
+  .about-image{
+    content-visibility: hidden;
+  }
+}

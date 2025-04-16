@@ -10,7 +10,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=300)
     slug = models.CharField(max_length=100)
     time = models.DateTimeField(auto_now_add=True)
-    content = CKEditor5Field('Text', config_name='extends')
+    content = CKEditor5Field(config_name='extends')
     views = models.PositiveIntegerField()
     likes = models.PositiveIntegerField()
 

@@ -167,15 +167,6 @@
 
   /* Responsive Design */
   @media (max-width: 768px) {
-    .nav-links {
-      background-color: var(--white);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 50%;
-      transform: translateX(100%);
-      transition: transform 0.5s ease-in;
-    }
     .burger {
       display: block;
     }

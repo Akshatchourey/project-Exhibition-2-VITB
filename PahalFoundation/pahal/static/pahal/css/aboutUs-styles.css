@@ -1,7 +1,6 @@
 /* General Styling */
 body {
     background: #fffbe6;
-    font-family: 'Poppins', sans-serif;
     color: #4d4d4d;
     margin: 0;
     padding: 0;
@@ -12,7 +11,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding: 50px 20px;
+    padding:15px 20px;
 }
 
 /* Title Styling */

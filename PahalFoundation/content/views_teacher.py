@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
+from django.utils.text import slugify
 from django.contrib.auth.decorators import login_required
-from .models import Blog, Student, Attendance
+from .models import Blog, Student, Attendance, Volunteer
 from .forms import WriteBlog, Admission, VolunteerEnrolment
 from .decorators import allowed_users
 
@@ -15,13 +16,18 @@ def timetable(request):
 
 @login_required(login_url='/login/')
 def create_blog(request):
+    form = WriteBlog()
     if request.method == 'POST':
-        title = request.POST.get('title')
-        content = request.POST.get('content')
-        Blog.objects.create(owner=request.user,
-                            title=title, content=content, views=0, likes=0)
+        form = WriteBlog(request.POST)
+        if form.is_valid():
+            blog = form.save(commit=False)
+            blog.owner = request.user
+            blog.slug = slugify(blog.title)
+            blog.views = blog.likes = 0
+            blog.save()
         return redirect("/your_blogs")
-    return render(request, 'content/blogcreate.html')
+
+    return render(request, 'content/blogcreate.html', {"form":form})
 
 
 @allowed_users(allowed_roles=['teacher', 'admin'])
@@ -39,7 +45,7 @@ def attendance(request):
             att = Attendance(student=st, status=status)
             att.save()
 
-        return redirect("/dashboard/attendance")
+        return redirect("/dashboard/profile")
 
     return render(request, 'content/attendance.html',{"students":students})
 
@@ -49,14 +55,18 @@ def admission(request):
         form = Admission(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            return redirect('/dashboard/student-info')
     return render(request, 'content/admission.html')
 
+@allowed_users(allowed_roles=['admin'])
+def volunteer_info(request):
+    volunteer = Volunteer.objects.filter()
+    return render(request, 'content/volunteer_info.html', {'volunteer':volunteer})
 @allowed_users(allowed_roles=['admin'])
 def volunteer_enrolment(request):
     if request.method == 'POST':
         form = VolunteerEnrolment(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            return redirect('/dashboard/volunteer-info')
     return render(request, 'content/volunteer_enrolment.html')

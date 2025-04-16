@@ -10,6 +10,7 @@ a{
     color: var(--text-color);
     margin:20px;
     display:flex;
+    flex-wrap:wrap;
 }
 
 .blog-container {
@@ -83,9 +84,7 @@ a{
 }
 
 .updates-container {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    margin-inline: auto;
     padding: 20px;
     font-family: Arial, sans-serif;
 }

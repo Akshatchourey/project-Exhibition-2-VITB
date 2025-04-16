@@ -3,6 +3,8 @@ from .import views
 from .import views_videos as views2
 from .import views_teacher as views3
 
+
+
 urlpatterns = [
     # views
     path('blogs/', views.blog, name='blog'),
@@ -22,6 +24,7 @@ urlpatterns = [
     path('dashboard/student-info/', views3.student_info, name="student_info"),
     path('dashboard/attendance/', views3.attendance, name="attendance"),
     path('dashboard/admission/',views3.admission,name="admission"),
+    path('dashboard/volunteer-info/', views3.volunteer_info, name="volunteer_info"),
     path('dashboard/volunteer-enrolment/',views3.volunteer_enrolment,name="volunteer_enrolment"),
     path('dashboard/create_blog/',views3.create_blog,name="create_blog"),
 

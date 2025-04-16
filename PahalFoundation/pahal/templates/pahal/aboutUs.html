@@ -3,12 +3,10 @@
 {% block body %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'pahal/css/aboutUs-styles.css' %}">
-<div class="about-container">
+<section>
+    <div class="about-container">
         <h1 class="about-title">About Us</h1>
-
-        <!-- Slogan -->
         <p class="slogan">"Taking the First Step Towards a Brighter Future."</p>
-
         <div class="about-section left">
             <div class="about-content">
                 <h2>Our Story</h2>
@@ -66,5 +64,6 @@
             <a href="/volunteer" class="volunteer-button">Join Us in Making a Difference - Volunteer, Donate, or Spread the Word!</a>
         </div>
     </div>
+</section>
 
 {% endblock body %}

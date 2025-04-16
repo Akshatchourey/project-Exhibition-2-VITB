@@ -3,25 +3,19 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'content/css/dashboard-styles-2.css' %}">
 <div class="container">
-    <h1>Student Info</h1>
+    <h1>Volunteer Info</h1>
     <div class="students-grid">
-        {% for st in students %}
+        {% for st in volunteer %}
         <div class="student-card">
             <div class="student-photo">
                 <img src="{{MEDIA_URL}}{{st.photo.url}}" alt="Photo of {{st.name}}">
             </div>
             <div class="student-details">
-                <p><strong>Roll No:</strong> {{st.roll_no}}</p>
-                {% if st.active == 1 %}
-                <p><strong>Status:</strong> <span class="status active">Active</span></p>
-                {% else %}
-                <p><strong>Status:</strong> <span class="status inactive">Inactive</span></p>
-                {% endif %}
+                <p><strong>Roll No:</strong> {{st.Reg_no}}</p>
                 <p><strong>Name:</strong> {{st.name}}</p>
-                <p><strong>Parent's Name:</strong> {{st.parents_name}}</p>
+                <p><strong>Desig:</strong> {{st.designation}}</p>
+                <p><strong>Email:</strong> {{st.email}}</p>
                 <p><strong>Phone No:</strong> {{st.phone_no}}</p>
-                <p><strong>Age:</strong> {{st.age}}</p>
-                <p><strong>Gender:</strong> {{st.gender}}</p>
             </div>
         </div>
         {% endfor %}

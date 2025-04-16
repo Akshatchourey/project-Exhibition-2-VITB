@@ -19,7 +19,6 @@
     font-family: "Arial", sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    overflow-x: hidden;
   }
 
   a{
@@ -54,10 +53,6 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
-  }
-
-  .logo img {
-    height: 40px;
   }
 
   .nav-links {
