@@ -6,15 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'content/css/dashboard-styles.css' %}">
+    <link rel="stylesheet" href="{% static 'content/css/dashboard-res.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" type="image/icon" href="{% static 'pahal/icon/favicon.ico' %}">
     <title>Admin Panel</title>
 </head>
 <body>
+<button id="toggle-menu" class="toggle-menu"><i class="fa fa-bars"></i></button>
 <div class="dashboard">
-    <div class="side-menu">
-        <div class="brand-name"><a href="/" style="color:var(--primary-color);">Pahal Foundation VITB</a></div>
-        <div class="menu-item" onclick="toggleMenu('dashboardMenu')">
+    <div class="side-menu" id="side-menu">
+        <div class="brand-name">
+            <a href="/" style="color:var(--primary-color);">Pahal Foundation VITB</a>
+        </div>
+        <div class="menu-item" onclick="toggleVisibility('dashboardMenu')">
             <span><i class="fa fa-home"></i> Dashboard</span>
             <i class="fa fa-angle-down"></i>
         </div>
@@ -26,7 +30,7 @@
 
 <!--    teacher/admin  -->
         {% if user|has_group:"admin" or user|has_group:"teacher" %}
-        <div class="menu-item" onclick="toggleMenu('studentsMenu')">
+        <div class="menu-item" onclick="toggleVisibility('studentsMenu')">
             <span><i class="fa fa-user-graduate"></i> Students</span>
             <i class="fa fa-angle-down"></i>
         </div>
@@ -39,7 +43,7 @@
 
 <!-- admin -->
         {% if user|has_group:"admin" %}
-        <div class="menu-item" onclick="toggleMenu('volunteersMenu')">
+        <div class="menu-item" onclick="toggleVisibility('volunteersMenu')">
             <span><i class="fa fa-hands-helping"></i> Volunteers</span>
             <i class="fa fa-angle-down"></i>
         </div>
@@ -49,7 +53,7 @@
         </div>
         {% endif %}
 
-        <div class="menu-item" onclick="toggleMenu('contentMenu')">
+        <div class="menu-item" onclick="toggleVisibility('contentMenu')">
             <span><i class="fa fa-pen"></i> Content & Media</span>
             <i class="fa fa-angle-down"></i>
         </div>
@@ -69,7 +73,7 @@
 
 <!--  teacher/admin  -->
         {% if user|has_group:"admin" or user|has_group:"teacher" %}
-        <div class="menu-item" onclick="toggleMenu('reportsMenu')">
+        <div class="menu-item" onclick="toggleVisibility('reportsMenu')">
             <span><i class="fa fa-chart-bar"></i> Reports</span>
             <i class="fa fa-angle-down"></i>
         </div>
@@ -79,7 +83,7 @@
         </div>
         {% endif %}
 
-        <div class="menu-item" onclick="toggleMenu('settingsMenu')">
+        <div class="menu-item" onclick="toggleVisibility('settingsMenu')">
             <span><i class="fa fa-cogs"></i> Settings</span>
             <i class="fa fa-angle-down"></i>
         </div>

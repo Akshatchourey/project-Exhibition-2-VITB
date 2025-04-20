@@ -22,8 +22,7 @@ def register(request):
         password = request.POST.get('password')
 
         if User.objects.filter(username=username).exists():
-            messages.error(request, "User already exists.")
-            return redirect(request, '/register/')
+            messages.error(request, "User Already Exists.")
 
         user = User.objects.create_user(
             first_name = first_name,
@@ -46,12 +45,10 @@ def login_page(request):
 
         if not User.objects.filter(username=username).exists():
             messages.error(request, "Invalid Username")
-            return redirect('/login/')
 
         user = authenticate(username=username, password=password)
         if user is None:
             messages.error(request, "Incorrect password")
-            return redirect(request, '/login/')
         else:
             login(request, user)
             return redirect("/")
@@ -70,5 +67,5 @@ def change_password(request):
             update_session_auth_hash(request, user)
             return redirect('/login')
         else:
-            return redirect('/change_password')
+            messages.error(request, "Input fields are not valid.")
     return render(request, "pahal/change_password.html")

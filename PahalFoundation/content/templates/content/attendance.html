@@ -4,6 +4,15 @@
 <link rel="stylesheet" href="{% static 'content/css/dashboard-styles-2.css' %}">
 <div class="container attendance-container">
     <h1>Take Attendance</h1>
+    <div>
+        {% if messages %}
+        <div>
+            {% for message in messages %}
+            {{message}}
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
     <div class="table-container">
         <form method="post">
             {% csrf_token %}
@@ -23,7 +32,7 @@
                 <td><span>{{st.name}}</span></td>
                 <td>
                     <select class="status-select" id="{{st.roll_no}}" name="rollNo{{st.roll_no}}">
-                        <option value="">Select Status</option>
+                        <option>Select Status</option>
                         <option value="present" class="status-present">Present</option>
                         <option value="absent" class="status-absent">Absent</option>
                     </select>

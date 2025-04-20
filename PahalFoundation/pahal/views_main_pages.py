@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from .models import NewVolunteer, ContactUs
+from django.contrib import messages
 
 # Create your views here.
 
@@ -16,12 +17,10 @@ def volunteer(request):
             new_volunteer = NewVolunteer(fullName=fullname, email=email, phoneNo=phone,
                                          interestArea=interest_area, about=about_me)
             new_volunteer.save()
-            message = "Data saved successfully!"
-            return render(request, 'pahal/volunteer.html', {'messages':message})
+            messages.success(request, "Data saved successfully!")
 
         except Exception as e:
-            message = f"Error saving data: {e}"
-            return render(request, 'pahal/volunteer.html', {'messages':message})
+            messages.error(request, f"Error saving data: {e}")
 
     return render(request, 'pahal/volunteer.html')
 def get_involved(request):
@@ -37,12 +36,10 @@ def contact(request):
             contact_us = ContactUs(fullName=fullname, email=email, phoneNo=phone,
                                    subject=subject, message=message)
             contact_us.save()
-            message = "message saved successfully!"
-            return render(request, 'pahal/contactUa.html', {'messages':message})
+            messages.success(request, "Data saved successfully!")
 
         except Exception as e:
-            message = f"Error saving message: {e}"
-            return render(request, 'pahal/contactUs.html', {'messages':message})
+            messages.error(request, f"Error saving data: {e}")
 
     return render(request, 'pahal/contactUs.html')
 def donate(request):

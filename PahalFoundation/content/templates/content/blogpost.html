@@ -9,31 +9,38 @@
             <h2 class="mt-0">{{post.title}}</h2>
             {{post.owner}} | {{post.time.date}}
             views {{post.views}} | Likes {{post.likes}}
-            <div class="">
+            <div>
                 <p>{{post.content|safe}}</p>
             </div>
         </div>
         <a href="/blogs" class=""><button class="blog-btn">More Blogs...</button></a>
+        <div class="like-btn">
+<!--            <button type="submit" name="like" class="like-button">👍 Like</button>-->
+        </div>
     </div>
-    <div class="">
-        <h2>Comment Section</h2>
+    <div class="blog-comment">
+        <h1>Comment Section</h1>
 
         {% if request.user.is_authenticated %}
         <form method="post">
             {% csrf_token %}
             <div class="">
-                <input type="text" id="new_comment" name="new_comment" required>
+                <textarea id="new_comment" name="new_comment" required></textarea>
             </div>
             <button type="submit" class="blog-btn">Comment</button>
         </form>
         {% endif %}
 
         {% if not post.blogComment.all %}
-            No Comments yet...Add one
+            <h2>No Comments yet...Add one</h2>
         {% else %}
             {% for comment in post.blogComment.all %}
-                {{comment.name}} | {{comment.date|date:"d-m-Y"}}
-                <p>{{comment.body}}</p>
+            <div class="comment">
+                <p>{{ comment.body }}</p>
+                <div class="comment-meta">
+                    {{ comment.name }} | {{ comment.date|date:"d-m-Y" }}
+                </div>
+            </div>
             {% endfor %}
         {% endif %}
     </div>

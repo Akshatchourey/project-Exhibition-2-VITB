@@ -1,0 +1,45 @@
+.toggle-menu {
+  display: none;
+}
+@media (max-width: 768px) {
+  .brand-name{
+    content-visibility:hidden;
+  }
+  .dashboard-right{
+  width:100%;
+  }
+  .toggle-menu {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    background: #f05462;
+    color: white;
+    border: none;
+    z-index: 1100;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .side-menu {
+  padding-top: 35px;
+    position: fixed;
+    width: 250px;
+    min-height: 100vh;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+  .side-menu.show {
+    transform: translateX(0);
+  }
+  .dashboard-right {
+    transition: margin-left 0.3s ease;
+  }
+  .dashboard-right.menu-open {
+    margin-left: 250px;
+  }
+}

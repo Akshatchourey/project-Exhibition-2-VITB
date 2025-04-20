@@ -99,3 +99,59 @@ a{
     width: 300px;
     text-align: center;
 }
+
+  .blog-comment{
+  font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    text-align: justify;
+    padding: 20px;
+  }
+
+  .like-btn {
+    margin-top: 15px;
+    align-self: flex-start;
+  }
+
+  .like-button {
+    background-color: #e6823f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+   }
+
+   .like-button:hover {
+     background-color: #146c43;
+   }
+
+   textarea#new_comment {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .comment {
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+    margin-top: 15px;
+    text-align: left;
+  }
+
+  .comment p {
+    margin-bottom: 5px;
+    font-size: 24px;
+    color: #333;
+  }
+
+  .comment-meta {
+    font-size: 14px;
+    color: #555;
+  }

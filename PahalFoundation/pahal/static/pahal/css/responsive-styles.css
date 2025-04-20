@@ -3,9 +3,18 @@
     flex-direction: column;
   }
 }
+
+  .name-home-res{
+    content-visibility: hidden;
+  }
+
 @media only screen and (max-width: 880px){
+  .name-home-res{
+    content-visibility:visible;
+  }
   .name-res{
     content-visibility: hidden;
+    visibility: hidden;
   }
   .pizza{
     transform:rotate(50deg);
@@ -27,11 +36,6 @@
     margin: 5px;
   }
   .nav-links-res{
-    content-visibility: hidden;
-  }
-
-  /* about image resp*/
-  .about-image{
     content-visibility: hidden;
   }
 }

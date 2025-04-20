@@ -4,7 +4,16 @@
 <div class="container">
     {{form.media}}
     <h1>Create Your new Blog here!!</h1>
-    <form method="post">
+    <div>
+        {% if messages %}
+        <div>
+            {% for message in messages %}
+            {{message}}
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    <form enctype="multipart/form-data" method="post">
         {% csrf_token %}
 
         <label>Title:</label>

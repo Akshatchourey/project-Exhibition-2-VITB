@@ -1,6 +1,7 @@
 /* General Styling */
 body {
     background: #fffbe6;
+    font-family: 'Poppins', sans-serif;
     color: #4d4d4d;
     margin: 0;
     padding: 0;
@@ -11,7 +12,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding:15px 20px;
+    padding: 50px 20px;
 }
 
 /* Title Styling */
@@ -115,4 +116,52 @@ body {
 
 .volunteer-button:hover {
     background-color: #cc6600;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 880px) {
+    .about-section {
+        flex-direction: column !important;
+        width: 90%;
+        padding: 20px 10px;
+    }
+
+    .about-image {
+        display: none !important;
+    }
+
+    .about-content {
+        width: 100% !important;
+        max-width: 100%;
+        height: auto !important;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .about-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+        text-align: justify;
+        word-break: break-word;
+        padding: 0 5px;
+    }
+
+    .about-title {
+        font-size: 2rem;
+        padding: 0 10px;
+    }
+
+    .slogan {
+        font-size: 1.1rem;
+        padding: 0 10px;
+    }
+
+    .volunteer-button {
+        font-size: 1rem;
+        padding: 10px 16px;
+        word-wrap: break-word;
+    }
 }

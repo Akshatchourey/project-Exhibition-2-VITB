@@ -7,9 +7,6 @@
 }
  html{
      height: 100%;
-     margin: 0;
-     display: flex;
-     flex-direction: column;
 }
  body {
      font-family: 'Poppins', sans-serif;
@@ -21,9 +18,10 @@
      justify-content: space-between;
      align-items: center;
      background: var(--primary-color);
-     padding: 15px 30px;
+     padding: 1rem 1rem;
      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
      border-bottom: 3px solid var(--accent-color);
+     top: 0;
 }
  .logo a {
      font-size: 1.8rem;
@@ -31,16 +29,17 @@
      color: white;
      text-decoration: none;
      transition: 0.3s;
-}
+ }
  .logo a:hover {
      color: var(--accent-color);
 }
  .nav-links {
-     list-style: none;
-     display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    display: flex;
 }
  .nav-links li {
-     margin: 0 15px;
+    margin: 0.6rem 1rem;
 }
  .nav-links a {
      text-decoration: none;

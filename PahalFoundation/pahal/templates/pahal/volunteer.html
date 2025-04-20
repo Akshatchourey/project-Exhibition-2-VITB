@@ -62,9 +62,10 @@
             </div>
         </section>
 
-        <section id="volunteer-form" class="volunteer-signup">
+        <section class="volunteer-signup">
             <div class="container">
-                <div class="form-container">
+                <h2 class="section-title">Become a Volunteer</h2>
+                <div>
                     {% if messages %}
                     <div>
                         {% for message in messages %}
@@ -73,7 +74,6 @@
                     </div>
                     {% endif %}
                 </div>
-                <h2 class="section-title">Become a Volunteer</h2>
                 <form id="signup-form" method="post" class="scroll-reveal">
                     {% csrf_token %}
                     <div class="form-group">
@@ -113,18 +113,16 @@
                 <h2 class="section-title">Volunteer Testimonials</h2>
                 <div class="testimonials-container">
                     <div class="testimonial scroll-reveal">
-                        <img src="" alt="Volunteer 1" class="testimonial-image">
                         <blockquote>
                             "Volunteering with Pahal Foundation has been an incredibly rewarding experience. I've seen firsthand the positive impact we're making in children's lives."
                         </blockquote>
-                        <p class="testimonial-author">- Priya Sharma, Teaching Assistant</p>
+                        <p class="testimonial-author">- Swapnil, Coordinator</p>
                     </div>
                     <div class="testimonial scroll-reveal">
-                        <img src="" alt="Volunteer 2" class="testimonial-image">
                         <blockquote>
                             "As an event coordinator, I've had the opportunity to bring the community together and raise awareness for important causes. It's been truly fulfilling."
                         </blockquote>
-                        <p class="testimonial-author">- Rahul Patel, Event Coordinator</p>
+                        <p class="testimonial-author">- Saransh, Event Coordinator</p>
                     </div>
                 </div>
             </div>

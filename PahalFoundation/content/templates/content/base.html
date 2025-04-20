@@ -7,16 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'content/css/base-styles.css' %}">
     <link rel="stylesheet" href="{% static 'content/css/video_playing.css' %}">
+    <link rel="stylesheet" href="{% static 'pahal/css/responsive-styles.css' %}">
     <link rel="icon" type="image/icon" href="{% static 'pahal/icon/favicon.ico' %}">
     <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
 {{request.first_name}}
-    <nav>
+    <nav class="nav-bar h-nav-resp">
         <div class="logo">
-            <a href="/">Pahal Foundation VITB</a>
+            <img class="name-home-res pizza r-pizza-resp" src="{% static 'pahal/img/logo.jpeg' %}" alt="Pahal Foundation Logo">
+            <a class="name-res" href="/">Pahal Foundation VITB</a>
         </div>
-        <ul class="nav-links">
+
+        <ul class="nav-links nav-links-res">
+            <li class="name-home-res"><a href="/">Home</a></li>
             <li><a href="/blogs">Blogs</a></li>
             <li><a href="/error404" >Videos</a></li>
             <li><a href="/error404">Gallery</a></li>
@@ -30,5 +34,6 @@
         </ul>
     </nav>
         {% block body %}{% endblock body %}
+    <script src="{% static 'content/js/main.js' %}"></script>
 </body>
 </html>         
